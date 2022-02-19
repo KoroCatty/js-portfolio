@@ -1,0 +1,162 @@
+@import "_reset.scss";
+@import "_setting.scss";
+@import "_line.scss";
+// <!-- <img src="<%= require('../images/top.jpg') %>" alt="" class="topImg"> -->
+
+body {
+  // width:100vw;
+  font-family: "Noto Sans CJK JP", RoG2サンセリフStd;
+object-fit: cover;//高さを固定したまま可変
+ background-image:linear-gradient(135deg,
+   rgb(41, 41, 41),
+    #626262);
+overflow: hidden scroll; // to prevent from scrolling
+// margin: 0 calc(50% - 50vw);
+// padding: 0 calc(50vw - 50%);
+}
+
+.topImg {
+  position: relative;
+  width:99.5vw;
+  margin:0 auto;
+  background-repeat:  no-repeat;
+  background-position:center top;
+  background-size:100%; 
+  height: 45vw;
+  object-fit: cover;//高さを固定したまま可変
+
+    // Mask effect
+    background-image: linear-gradient(135deg, rgba(14, 177, 253, 0.2), rgba(255, 255, 255, 0.1)),url('../images/high.jpg');
+
+    // @media (max-width:2500px) and (min-width:2000px) {
+    //   height: 30vw;
+    // }
+    // @media (max-width:2000px) and (min-width:1700px) {
+    //   height: 45vw;
+    // }
+    // @media (max-width:1400px) and (min-width:1281px) {
+    //   height: 45vw;
+    // }
+  // @include mq(s) { 
+  //   height: 600px;
+  // }
+}
+
+.topImg::after {
+  content: '水の呼吸。。。';
+  color:white;
+  width:80vw;
+
+  font-size: 4vw;
+  text-align: center;
+  line-height:5vw;
+  position:absolute;
+  top:40%;
+  left:50%;
+  transform: translate(-48%);
+}
+
+// ----------Traffic lights-----------
+.signal{
+  width: 1vw;
+  height: 3vw;
+  box-shadow: 2px 2px 5px rgb(189, 189, 189);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-size: 0.5vw;
+  line-height: 0.5vw;
+  
+  color: black;
+  text-shadow: 2px 2px 5px rgb(107, 107, 107);
+  background-color:rgba(39, 39, 39, 0.9);
+  // background-image:linear-gradient(140deg,
+  //  rgba(27, 27, 27, 0.9),
+  //   rgba(7, 7, 7, 0.4));
+  border-radius: 16px;
+  @include mq(s) {
+    width: 2vw;
+    height: 5vw;
+    box-shadow: 2px 2px 5px rgb(189, 189, 189);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    font-size: 0.8vw;
+    line-height: 1vw;
+    
+    color: black;
+    text-shadow: 2px 2px 5px rgb(107, 107, 107);
+    background-color:rgba(39, 39, 39, 0.9);
+    border-radius: 16px;
+  }
+}
+.n{
+  position: absolute;
+  top: 27vw;
+  left: 61.5%;
+  @include mq(s) {
+    position: absolute;
+    top: 25vw;
+    left: 61%;
+  }
+}
+.s{
+  position: absolute;
+  top: 27vw;
+  left: 40%;
+  display:none;
+}
+.e{
+  position: absolute;
+  top: 28vw;
+  left: 80.5%;
+}
+.w{
+  top: 29vw;
+  left: 36%;
+}
+
+.green{
+  color: black;
+}
+
+.yellow{
+  color: black;
+}
+.red{
+  color: black;
+}
+.rightturn{
+  color: black;
+  font-weight: bold;
+}
+
+.street-bg{
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  // background-image: url();
+}
+// --- Cards Section----------------------------
+.cardsTitle {
+  color:white;
+font-size: 30px;
+text-align: center;
+}
+
+.cardsContainer p {
+font-size: 38px;
+text-align: center;
+counter:white;
+}
+
+
+
+

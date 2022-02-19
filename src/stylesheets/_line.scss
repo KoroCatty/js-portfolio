@@ -1,0 +1,133 @@
+.line {
+  background-image: linear-gradient(-45deg, rgba(14, 177, 253, 0.4), rgba(255, 255, 255, 0.856)),
+    url("../images/line3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  @include mq(s) {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+}
+
+.lineTitle {
+  font-size: 42px;
+  text-align: center;
+  transform: translateX(-2%);
+ 
+  @include mq(s) {
+    font-size: 20px;
+  }
+}
+
+.smartphone {
+  width: 90vw; /* スマホのsize。 100%にすると画面いっぱいに広がってしまう。 これは親なので、親の幅の設定は必須 */
+  margin: 0 auto; /* 中央寄せ */
+  display: flex;
+  flex-direction: column-reverse;
+  // height:550px;
+  flex-wrap: wrap;
+  margin: 40px;
+}
+
+.container {
+  display: flex; /* とするとこの子要素が flex item となります。 */
+  justify-content: flex-end; /* 上下中央寄せ */
+  align-items: center; /* 横方向中央寄せ フレックスアイテムが配置される軸（縦軸）でない方（横軸）は中央寄りになる */
+  flex-direction: column; /* 上から下へ並べる 縦向きに配置される。 */
+  /* border:1px solid red; */
+  width: 100%;
+  // height:50px;
+  /* margin:0 auto;  */
+  flex-wrap: wrap;
+}
+#Me {
+  width: 40vw;
+  height: 30px;
+  @include mq(s) {
+    width: 60vw;
+    margin-right: 15vw;
+    height: 20px;
+  }
+}
+.meLabel {
+  margin-bottom: 12px;
+  // @include mq(s) {
+  //   margin-bottom: 20px;
+  // }
+}
+
+
+#Them {
+  width: 40vw;
+  height: 30px;
+  @include mq(s) {
+    width: 60vw;
+    margin-right: 15vw;
+    height: 20px;
+  }
+}
+.ThemLabel {
+  @include mq(s) {
+    margin-bottom: 12px;
+  }
+}
+
+.container2 {
+  width: 100%;
+}
+#chatarea {
+  //  background-color: red;
+   width:50%;
+  height: 400px;
+  margin:0 auto;
+  // margin-right: 20vw;
+  overflow-y: scroll;
+  /* scroll-margin-top: scrollHeight; */
+  @include mq(s) {
+    height: 240px;
+    margin-right: 10vw;
+    width:80%;
+  }
+}
+/* 
+.chat-me{
+  display:flex;
+  justify-content :flex-end;
+}
+.chat-them{
+  display:flex;
+  justify-content :flex-start;
+} */
+/* .chat-row chat-me{
+  display:flex;
+  justify-content :flex-end;
+} */
+
+/* .chat1{
+  /* border:1px solid red; */
+/* display: inline-block;文字の長さに応じてbackground-colorを適用するもの */
+/* height: 70px; */
+/* background-color:rgb(53, 207, 53); */
+/* border-radius:15%; */
+/* text-align:center; */
+/* line-height:70px */
+/* } */
+/* 
+.chat2{
+  display: inline-block;
+  height:70px;
+  background-color:rgb(206, 204, 204) ;
+  border-radius:15%;
+  /* text-align:center; */
+/* line-height:70px; */
+
+/* .chat3{
+  display: inline-block;
+  height: 70px;
+  /* margin:0 auto; */
+/* background-color:rgb(53, 207, 53); */
+/* border-radius:15%; */
+/* text-align:center; */
+/* line-height:70px */

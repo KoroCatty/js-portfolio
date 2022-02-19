@@ -1,0 +1,64 @@
+To start... npm start
+npm run build
+npm run deploy
+
+
+package.json
+ "start": "npx webpack serve --mode=development --open",
+
+ portの変更
+"start": "npx webpack serve --mode=development --open --port 9000",
+
+
+terser-webpack-plugin?
+パッケージのライセンス情報をjsファイルの中に含める
+
+
+postcss-loader?
+ #Autoprefixerの設定用
+
+-----------------------------------------------------
+開発用とproduction用の設定ファイルを分ける
+dev.js & prod.js
+設定ファイルを分けるためにwebpack merge必要
+
+package.json
+scriptの所を変更する
+"dev": "webpack --config webpack.dev.js",
+"build": "webpack --config webpack.prod.js"
+---------------------------------------------------
+
+webpack 標準のパッケージのバージョンを確認する方法
+npm info webpack
+
+
+SourceMap
+devtool: 'cheap-module-eval-source-map',はjsなどでエラーが出た時にブラウザでどのファイルがエラーを出しているのかを確認できるようになる
+（たぶん標準装備されてるのでこれはもういらない？）
+
+---------------------------------------
+Browserslist はこれらで共有されている
+
+The config to share target browsers and Node.js versions between different front-end tools. It is used in:
+
+Autoprefixer
+Babel
+postcss-preset-env
+eslint-plugin-compat
+stylelint-no-unsupported-browser-features
+postcss-normalize
+obsolete-webpack-plugin
+
+-----------------------------------------
+
+Es-lint の実行
+ npm run lint で実行できるが、eslintignoreで無視しているとできないので、これらを消す必要がある。だが、ルールが厳しくなる
+
+＊VS　CODEの拡張機能で、ESLint　というものもある
+
+チーム開発では、eslintをnpmにインストールしておくことが必須。
+個人ではエディタの拡張機能で十分。fix機能もある。
+
+
+
+
