@@ -28,7 +28,7 @@
   flex-direction: column-reverse;
   // height:550px;
   flex-wrap: wrap;
-  margin: 40px;
+  margin: 10px 40px 40px 40px;
 }
 
 .container {
@@ -43,6 +43,7 @@
   flex-wrap: wrap;
 }
 #Me {
+  border:none;
   width: 40vw;
   height: 30px;
   @include mq(s) {
@@ -60,6 +61,7 @@
 
 
 #Them {
+  border:none;
   width: 40vw;
   height: 30px;
   @include mq(s) {
@@ -80,7 +82,7 @@
 #chatarea {
   //  background-color: red;
    width:50%;
-  height: 400px;
+  height: 300px;
   margin:0 auto;
   // margin-right: 20vw;
   overflow-y: scroll;

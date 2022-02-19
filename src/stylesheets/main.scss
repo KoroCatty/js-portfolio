@@ -28,6 +28,15 @@ overflow: hidden scroll; // to prevent from scrolling
     // Mask effect
     background-image: linear-gradient(135deg, rgba(14, 177, 253, 0.2), rgba(255, 255, 255, 0.1)),url('../images/high.jpg');
 
+    @include mq(s) {
+      background-image: linear-gradient(135deg, rgba(14, 177, 253, 0.2), rgba(255, 255, 255, 0.1)),url('../images/top_sp.png');
+      height:75vw;
+    }
+    @include mq(m) {
+      background-image: linear-gradient(135deg, rgba(14, 177, 253, 0.2), rgba(255, 255, 255, 0.1)),url('../images/top_sp.png');
+      height:70vw;
+    }
+
     // @media (max-width:2500px) and (min-width:2000px) {
     //   height: 30vw;
     // }
@@ -95,6 +104,24 @@ overflow: hidden scroll; // to prevent from scrolling
     background-color:rgba(39, 39, 39, 0.9);
     border-radius: 16px;
   }
+  @include mq(m) {
+    width: 2vw;
+    height: 5vw;
+    box-shadow: 2px 2px 5px rgb(189, 189, 189);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    font-size: 0.8vw;
+    line-height: 1vw;
+    
+    color: black;
+    text-shadow: 2px 2px 5px rgb(107, 107, 107);
+    background-color:rgba(39, 39, 39, 0.9);
+    border-radius: 16px;
+  }
 }
 .n{
   position: absolute;
@@ -102,8 +129,13 @@ overflow: hidden scroll; // to prevent from scrolling
   left: 61.5%;
   @include mq(s) {
     position: absolute;
-    top: 25vw;
-    left: 61%;
+    top: 42vw;
+    left: 56%;
+  }
+  @include mq(m) {
+    position: absolute;
+    top: 42vw;
+    left: 56%;
   }
 }
 .s{
@@ -116,10 +148,30 @@ overflow: hidden scroll; // to prevent from scrolling
   position: absolute;
   top: 28vw;
   left: 80.5%;
+  @include mq(s) {
+    position: absolute;
+    top: 45vw;
+    left: 89%;
+  }
+  @include mq(m) {
+    position: absolute;
+    top: 45vw;
+    left: 89%;
+  }
 }
 .w{
   top: 29vw;
   left: 36%;
+  @include mq(s) {
+    position: absolute;
+    top: 46vw;
+    left: 10.5%;
+  }
+  @include mq(m) {
+    position: absolute;
+    top: 46vw;
+    left: 10.5%;
+  }
 }
 
 .green{
