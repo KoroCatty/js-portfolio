@@ -54,7 +54,7 @@ Me.value = "";
 textDiv.style.cssText = `
 background-color: rgb(53, 207, 53);
 border-radius: 20px;
-padding: 1em;
+padding: 1.5vw;
 `;
 
 newMessage.style.cssText = 
@@ -98,7 +98,7 @@ Them.value ="";
 textDiv2.style.cssText = `
 background-color: rgb(230, 213, 213);
 border-radius: 20px;
-padding: 1em;　//emは一文字分の大きさ
+padding: 1.5vw;
 `;
 
 //新しく生成されるdiv(子)にスタイル付けする

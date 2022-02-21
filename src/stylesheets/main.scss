@@ -7,9 +7,9 @@ body {
   // width:100vw;
   font-family: "Noto Sans CJK JP", RoG2サンセリフStd;
 object-fit: cover;//高さを固定したまま可変
- background-image:linear-gradient(135deg,
+ background-image:linear-gradient(90deg,
    rgb(41, 41, 41),
-    #626262);
+    #f3f3f3);
 overflow: hidden scroll; // to prevent from scrolling
 // margin: 0 calc(50% - 50vw);
 // padding: 0 calc(50vw - 50%);
@@ -197,6 +197,9 @@ overflow: hidden scroll; // to prevent from scrolling
   // background-image: url();
 }
 // --- Cards Section----------------------------
+.cards {
+  margin-top:40px;
+}
 .cardsTitle {
   color:white;
 font-size: 30px;
@@ -206,8 +209,63 @@ text-align: center;
 .cardsContainer p {
 font-size: 38px;
 text-align: center;
-counter:white;
+color:white;
 }
+
+
+
+// --- footer ----------------------
+
+// footer-----------------------------------
+footer {
+  background-color: rgba(78, 70, 63, 0.19);
+  color: white;
+  margin-top: 120px;
+  padding-bottom: 60px;
+  @include mq(s) { 
+    margin-top: 20px;
+  }
+  @include mq(m) { 
+  }
+}
+.footerContainer {
+  max-width: 1040px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  @include mq(s) { 
+    padding-bottom: 6vw;
+  }
+  @include mq(m) { 
+    padding-bottom: 50px;
+  }
+  &__link {
+    display: block;
+    &:hover {
+      opacity: 0.4;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  &__link:nth-child(2) {
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+  &__img {
+    width: 42px;
+  }
+}
+
+.footerContact {
+  max-width: 1040px;
+  margin: auto;
+  margin-top: 16px;
+  &__email {
+    color: rgb(70, 70, 70);
+    text-align: center;
+  }
+}
+
 
 
 

@@ -88,7 +88,7 @@
   overflow-y: scroll;
   /* scroll-margin-top: scrollHeight; */
   @include mq(s) {
-    height: 240px;
+    height: 160px;
     margin-right: 10vw;
     width:80%;
   }
