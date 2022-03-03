@@ -66,9 +66,22 @@ overflow: hidden scroll; // to prevent from scrolling
 }
 
 // ----------Traffic lights-----------
+.phaseNumber {
+  color:white;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 280px;
+}
+.nightActive {
+  color:rgb(185, 52, 52);
+  color:green;
+  font-size: 90px;
+}
 .signal{
-  width: 1vw;
-  height: 3vw;
+  // width: 1vw;
+  // height: 3vw;
+  width: 1.5vw;
+  height: 4.5vw;
   box-shadow: 2px 2px 5px rgb(189, 189, 189);
   position: absolute;
   display: flex;
@@ -76,8 +89,10 @@ overflow: hidden scroll; // to prevent from scrolling
   align-items: center;
   flex-direction: column;
 
-  font-size: 0.5vw;
-  line-height: 0.5vw;
+  // font-size: 0.5vw;
+  font-size: 1.5vw;
+  // line-height: 0.5vw;
+  line-height: 1.5vw;
   
   color: black;
   text-shadow: 2px 2px 5px rgb(107, 107, 107);
@@ -123,9 +138,15 @@ overflow: hidden scroll; // to prevent from scrolling
     border-radius: 16px;
   }
 }
+// 北信号のみスタイル
+.signal-ns.n {
+  line-height: 1.2vw;
+  font-size:1.3vw;
+  height: 5.3vw;
+}
 .n{
   position: absolute;
-  top: 27vw;
+  top: 26vw;
   left: 61.5%;
   @include mq(s) {
     position: absolute;

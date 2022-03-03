@@ -2,7 +2,6 @@ let scrolldown = document.getElementById("chatarea");
 scrolldown.scrollTop = scrolldown.scrollHeight;
 
 
-
 //チャット1行につきdivタグ1つとなっていたが、divタグの中にもう一つdivタグを入れて「フレックスコンテナー」と「フレックスアイテム」の関係にした
 
 //HTMLのcontainer2を取得し、messageという変数に設定。(既存のcontainer2にdivを追加していく)

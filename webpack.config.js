@@ -7,8 +7,8 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-  // mode: 'development',// load時間がproductionより速い
-  mode: 'production',
+  mode: 'development',// load時間がproductionより速い
+  // mode: 'production',
   // devtool: 'cheap-module-eval-source-map',//buildエラー
   performance: {
     hints: false,  //img sizeのエラーを消す
