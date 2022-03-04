@@ -1,5 +1,6 @@
 import '../stylesheets/main.scss';
 import './line.js';
+import './loading.js';
 
 // 状態番号　昼間
 var state_day = 0;
@@ -33,27 +34,25 @@ var state = 0; //グローバルスコープにはvarを使うのがよい。ど
 function flashRed(redArg) {
   redArg.style.color = "rgba(255, 0, 0, 0.8)";
   // redArg.style.textShadow = "5px 5px 5px blue"; //開発用
+  //信号点灯時のみ
   redArg.style.textShadow = "-5px -5px 20px red, 5px 5px 20px red";
 
 }
 // Yellowの関数化
 function flashYellow(yellowArg) {
   yellowArg.style.color = "rgba(255,255,0, 0.8)";
-  // yellowArg.style.textShadow = "5px 5px 5px blue";
   yellowArg.style.textShadow = "-5px -5px 20px yellow, 5px 5px 20px yellow";
 
 }
 // Greenの関数化
 function flashGreen(greenArg) {
   greenArg.style.color = "rgba(0,255,0,0.8)";
-  // greenArg.style.textShadow = "5px 5px 5px blue";
   greenArg.style.textShadow = "-5px -5px 15px green, -5px 15px 15px green";
 
 }
 // right turn の関数化
 function flashArrow(arrowArg) {
   arrowArg.style.color =  "rgba(0,255,0,0.8)";
-  // arrowArg.style.textShadow = "5px 5px 5px blue";
   arrowArg.style.textShadow = "-5px -5px 20px green, -5px 15px 20px green";
 
 }
@@ -212,7 +211,6 @@ function cycle_day() {
       // flash green
       const greenSignal = s.querySelector('.green');
       flashGreen(greenSignal);
-
     }
     // 現在のフェーズを表示
     function showPhaseNumber() {
@@ -225,7 +223,6 @@ function cycle_day() {
     let signals = document.querySelectorAll('.signal-ew');
     for (const s of signals) {
       s.querySelector('.red').style.color = "black";
-
 
       // flash Yellow
       const yellowSignal = s.querySelector('.yellow');
@@ -309,7 +306,6 @@ function cycle_night() {
     function showPhaseNumber() {
       document.querySelector('.phaseNumber').textContent = "Night";
       document.querySelector('.phaseNumber').classList.add('nightActive');
-
     }
     showPhaseNumber();
     nextTimeout = 500
@@ -340,6 +336,7 @@ function cycle_night() {
 
       s.querySelector('.green').style.color = "black";
     }
+
     //ここで夜パターンカウントを増やす
     count_night++; //夜パターンのカウントを一ずつ上げていく
     console.log("夜パターンカウント", count_night);//消灯したらカウントが上がる　  
@@ -366,11 +363,7 @@ function cycle_night() {
     setTimeout(cycle_night, nextTimeout);  //5回に達するまではこれが実行される
   }
 
-
 }
 
-// 状態サイクルの実行
-cycle_night();//上で定義したものを実行するもの。ここでnightにしているので、nightがまず初めに実行される。
-
-
-  // --------------------------------------------------
+// 状態サイクルの実行　ページ表示時まず始めに実行される
+cycle_night();
