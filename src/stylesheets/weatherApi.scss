@@ -19,15 +19,15 @@
     margin: 0 auto;
     text-align: center;
     color: white;
-  //     @include mq(s) {
-  //   height: 600px;
-  // }
-  //     @include mq(m) {
-  //   height: 600px;
-  // }
-  //     @include mq(l) {
-  //   background-color: red;
-  // }
+    //     @include mq(s) {
+    //   height: 600px;
+    // }
+    //     @include mq(m) {
+    //   height: 600px;
+    // }
+    //     @include mq(l) {
+    //   background-color: red;
+    // }
   }
   &__city {
     font-size: 28px;
@@ -46,12 +46,12 @@
     // font-size: 80px;
     transform: translateX(-4%);
     @include mq(s) {
-      margin-top:40px;
-      margin-bottom:40px;
+      margin-top: 40px;
+      margin-bottom: 40px;
     }
     @include mq(m) {
-     margin-top:40px;
-     margin-bottom:40px;
+      margin-top: 40px;
+      margin-bottom: 40px;
     }
   }
   &--icon {
@@ -79,15 +79,16 @@
     display: flex;
     visibility: hidden;
     background-color: rgba(66, 66, 66, 0.45);
-    margin-top: 28px;
+    margin-top: 24px;
     li {
       margin: 20px auto;
-      font-size: 20px;
+      font-size: 24px;
       @include mq(s) {
-        font-size: 9px;
+        font-size: 16px;
+        line-height: 26px;
       }
       @include mq(m) {
-        font-size: 13px;
+        font-size: 16px;
       }
     }
   }
@@ -112,6 +113,9 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
+  @include mq(ss) {
+    margin-top: 30px;
+  }
   @include mq(s) {
     width: 100%;
     max-width: 300px;
@@ -119,8 +123,6 @@
     transform: translateX(-55%);
   }
   @include mq(m) {
-    // width: 100%;
-    // max-width: 320px;
   }
   &__search {
     display: flex;
@@ -138,12 +140,15 @@
     font-size: 120%;
 
     // make some room for magnifier icon
-    width: calc(100% - 100px);
+    // width: calc(100% - 100px);
+    width: 100%;
     @include mq(s) {
       width: 100%;
+      padding: 6px 14px;
     }
     @include mq(m) {
       width: 100%;
+      padding: 6px 14px;
     }
   }
 }
@@ -167,16 +172,16 @@
 .temp {
   color: white;
   font-size: 80px;
-      @include mq(s) {
-      font-size: 40px;
-    }
-    @include mq(m) {
-      font-size: 60px;
-    }
+  @include mq(s) {
+    font-size: 40px;
+  }
+  @include mq(m) {
+    font-size: 60px;
+  }
 }
-
 
 .description {
   text-transform: capitalize;
   margin-left: 8px;
+  display: none;
 }
