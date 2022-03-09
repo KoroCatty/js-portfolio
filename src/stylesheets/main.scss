@@ -1,7 +1,7 @@
 @import "_reset.scss";
 @import "_setting.scss";
 @import "_line.scss";
-@import "weatherApi.scss";
+@import "_weatherApi.scss";
 // <!-- <img src="<%= require('../images/top.jpg') %>" alt="" class="topImg"> -->
 
 body {
@@ -42,6 +42,7 @@ body {
 
 .topImg::after {
   content: "Welcome to my Portfolio";
+  text-transform: capitalize;
   color: white;
   width: 80vw;
 
@@ -60,7 +61,7 @@ body {
   font-size: 20px;
   text-align: center;
   padding-top: 10px;
-  transform: translateX(2%);
+  // transform: translateX(2%);
   @include mq(s) {
     font-size: 14px;
   }

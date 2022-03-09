@@ -12,8 +12,11 @@
 }
 
 .lineTitle {
-  font-size: 42px;
   text-align: center;
+  font-size:42px;
+  color: white;
+  margin-top:40px;
+  font-weight: 600;
   transform: translateX(-2%);
  
   @include mq(s) {
