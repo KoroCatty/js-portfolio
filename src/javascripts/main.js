@@ -1,6 +1,7 @@
 import '../stylesheets/main.scss';
 import './line.js';
 import './loading.js';
+import './weatherApi.js';
 
 // 状態番号　昼間
 var state_day = 0;

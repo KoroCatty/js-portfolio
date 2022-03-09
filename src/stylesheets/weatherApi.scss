@@ -1,0 +1,182 @@
+@import "_reset.scss";
+@import "_setting.scss";
+
+.weather {
+  // pick Random image from unsplash
+  // background-image: url('https://source.unsplash.com/1600x900/?landscape');
+  position: relative;
+
+  height: 80vh;
+  width: 90vw;
+  margin: 40px auto 40px auto;
+
+  font-family: "Open Sans", sans-serif;
+  &__main {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), transparent);
+    position: absolute;
+    width: 100%;
+    height: 40vh;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+  //     @include mq(s) {
+  //   height: 600px;
+  // }
+  //     @include mq(m) {
+  //   height: 600px;
+  // }
+  //     @include mq(l) {
+  //   background-color: red;
+  // }
+  }
+  &__city {
+    font-size: 28px;
+    margin-top: 40px;
+    @include mq(s) {
+      font-size: 18px;
+    }
+    @include mq(m) {
+      font-size: 24px;
+    }
+  }
+  &--large {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // font-size: 80px;
+    transform: translateX(-4%);
+    @include mq(s) {
+      margin-top:40px;
+      margin-bottom:40px;
+    }
+    @include mq(m) {
+     margin-top:40px;
+     margin-bottom:40px;
+    }
+  }
+  &--icon {
+    width: 150px;
+    height: 130px;
+    transform: translateY(10%);
+    @include mq(s) {
+      width: 60px;
+      height: 48px;
+    }
+    @include mq(m) {
+      width: 100px;
+      height: 80px;
+    }
+  }
+
+  &__button {
+    width: 120px;
+    padding: 8px 16px !important;
+    background-color: rgba(66, 66, 66, 0.65);
+    border-radius: 15px;
+    color: white;
+  }
+  &__details {
+    display: flex;
+    visibility: hidden;
+    background-color: rgba(66, 66, 66, 0.45);
+    margin-top: 28px;
+    li {
+      margin: 20px auto;
+      font-size: 20px;
+      @include mq(s) {
+        font-size: 9px;
+      }
+      @include mq(m) {
+        font-size: 13px;
+      }
+    }
+  }
+  &__details.active {
+    visibility: visible;
+    @include mq(s) {
+    }
+    @include mq(m) {
+    }
+  }
+}
+
+.card {
+  background: rgba(20, 20, 20, 0.65); // included opacity
+  color: white;
+  padding: 18px;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 400px;
+  margin: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  @include mq(s) {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    transform: translateX(-55%);
+  }
+  @include mq(m) {
+    // width: 100%;
+    // max-width: 320px;
+  }
+  &__search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__searchBar {
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 24px;
+    background: rgba(92, 91, 91, 0.7);
+    color: white;
+    font-family: inherit;
+    font-size: 120%;
+
+    // make some room for magnifier icon
+    width: calc(100% - 100px);
+    @include mq(s) {
+      width: 100%;
+    }
+    @include mq(m) {
+      width: 100%;
+    }
+  }
+}
+
+.search__button {
+  margin: 8px;
+  border-radius: 50%;
+  border: none;
+  height: 44px;
+  width: 44px;
+  outline: none;
+  background: rgba(153, 153, 153, 0.65);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    background: #ffffff6b;
+  }
+}
+
+.temp {
+  color: white;
+  font-size: 80px;
+      @include mq(s) {
+      font-size: 40px;
+    }
+    @include mq(m) {
+      font-size: 60px;
+    }
+}
+
+
+.description {
+  text-transform: capitalize;
+  margin-left: 8px;
+}

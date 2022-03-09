@@ -1,82 +1,84 @@
 @import "_reset.scss";
 @import "_setting.scss";
 @import "_line.scss";
+@import "weatherApi.scss";
 // <!-- <img src="<%= require('../images/top.jpg') %>" alt="" class="topImg"> -->
 
 body {
   // width:100vw;
   font-family: "Noto Sans CJK JP", RoG2サンセリフStd;
-object-fit: cover;//高さを固定したまま可変
- background-image:linear-gradient(90deg,
-   rgb(41, 41, 41),
-    #f3f3f3);
-overflow: hidden scroll; // to prevent from scrolling
-// margin: 0 calc(50% - 50vw);
-// padding: 0 calc(50vw - 50%);
+  object-fit: cover; //高さを固定したまま可変
+  background-image: linear-gradient(125deg, rgb(41, 41, 41), #f3f3f3);
+  overflow: hidden scroll; // to prevent from scrolling
+  // margin: 0 calc(50% - 50vw);
+  // padding: 0 calc(50vw - 50%);
 }
 
 .topImg {
   position: relative;
-  width:99.5vw;
-  margin:0 auto;
-  background-repeat:  no-repeat;
-  background-position:center top;
-  background-size:100%; 
+  width: 99.5vw;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100%;
   height: 45vw;
-  object-fit: cover;//高さを固定したまま可変
+  object-fit: cover; //高さを固定したまま可変
 
-    // Mask effect
-    background-image: linear-gradient(135deg, rgba(14, 177, 253, 0.2), rgba(255, 255, 255, 0.1)),url('../images/high.jpg');
+  // Mask effect
+  background-image: linear-gradient(135deg, rgba(14, 177, 253, 0.2), rgba(255, 255, 255, 0.1)),
+    url("../images/high.jpg");
 
-    @include mq(s) {
-      background-image: linear-gradient(135deg, rgba(14, 177, 253, 0.2), rgba(255, 255, 255, 0.1)),url('../images/top_sp.png');
-      height:75vw;
-    }
-    @include mq(m) {
-      background-image: linear-gradient(135deg, rgba(14, 177, 253, 0.2), rgba(255, 255, 255, 0.1)),url('../images/top_sp.png');
-      height:70vw;
-    }
+  @include mq(s) {
+    background-image: linear-gradient(135deg, rgba(14, 177, 253, 0.2), rgba(255, 255, 255, 0.1)),
+      url("../images/top_sp.png");
+    height: 75vw;
+  }
+  @include mq(m) {
+    background-image: linear-gradient(135deg, rgba(14, 177, 253, 0.2), rgba(255, 255, 255, 0.1)),
+      url("../images/top_sp.png");
+    height: 70vw;
+  }
 
-    // @media (max-width:2500px) and (min-width:2000px) {
-    //   height: 30vw;
-    // }
-    // @media (max-width:2000px) and (min-width:1700px) {
-    //   height: 45vw;
-    // }
-    // @media (max-width:1400px) and (min-width:1281px) {
-    //   height: 45vw;
-    // }
-  // @include mq(s) { 
+  // @media (max-width:2500px) and (min-width:2000px) {
+  //   height: 30vw;
+  // }
+  // @media (max-width:2000px) and (min-width:1700px) {
+  //   height: 45vw;
+  // }
+  // @media (max-width:1400px) and (min-width:1281px) {
+  //   height: 45vw;
+  // }
+  // @include mq(s) {
   //   height: 600px;
   // }
 }
 
 .topImg::after {
-  content: '水の呼吸。。。';
-  color:white;
-  width:80vw;
+  content: "水の呼吸。。。";
+  color: white;
+  width: 80vw;
 
   font-size: 4vw;
   text-align: center;
-  line-height:5vw;
-  position:absolute;
-  top:40%;
-  left:50%;
+  line-height: 5vw;
+  position: absolute;
+  top: 40%;
+  left: 50%;
   transform: translate(-48%);
 }
 
 // ----------Traffic lights-----------
 .phaseNumber {
-  color:white;
+  color: white;
   font-size: 60px;
   text-align: center;
   padding-top: 280px;
 }
 .nightActive {
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   font-size: 90px;
 }
-.signal{
+.signal {
   // width: 1vw;
   // height: 3vw;
   width: 1.5vw;
@@ -92,10 +94,10 @@ overflow: hidden scroll; // to prevent from scrolling
   font-size: 1.5vw;
   // line-height: 0.5vw;
   line-height: 1.5vw;
-  
+
   color: black;
   text-shadow: 2px 2px 5px rgb(107, 107, 107);
-  background-color:rgba(39, 39, 39, 0.9);
+  background-color: rgba(39, 39, 39, 0.9);
   // background-image:linear-gradient(140deg,
   //  rgba(27, 27, 27, 0.9),
   //   rgba(7, 7, 7, 0.4));
@@ -109,13 +111,13 @@ overflow: hidden scroll; // to prevent from scrolling
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  
+
     font-size: 0.8vw;
     line-height: 1vw;
-    
+
     color: black;
     text-shadow: 2px 2px 5px rgb(107, 107, 107);
-    background-color:rgba(39, 39, 39, 0.9);
+    background-color: rgba(39, 39, 39, 0.9);
     border-radius: 16px;
   }
   @include mq(m) {
@@ -127,23 +129,23 @@ overflow: hidden scroll; // to prevent from scrolling
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  
+
     font-size: 0.8vw;
     line-height: 1vw;
-    
+
     color: black;
     text-shadow: 2px 2px 5px rgb(107, 107, 107);
-    background-color:rgba(39, 39, 39, 0.9);
+    background-color: rgba(39, 39, 39, 0.9);
     border-radius: 16px;
   }
 }
 // 北信号のみスタイル
 .signal-ns.n {
   line-height: 1.2vw;
-  font-size:1.3vw;
+  font-size: 1.3vw;
   height: 5.3vw;
 }
-.n{
+.n {
   position: absolute;
   top: 26vw;
   left: 61.5%;
@@ -158,13 +160,13 @@ overflow: hidden scroll; // to prevent from scrolling
     left: 56%;
   }
 }
-.s{
+.s {
   position: absolute;
   top: 27vw;
   left: 40%;
-  display:none;
+  display: none;
 }
-.e{
+.e {
   position: absolute;
   top: 28vw;
   left: 80.5%;
@@ -179,7 +181,7 @@ overflow: hidden scroll; // to prevent from scrolling
     left: 89%;
   }
 }
-.w{
+.w {
   top: 29vw;
   left: 36%;
   @include mq(s) {
@@ -194,58 +196,38 @@ overflow: hidden scroll; // to prevent from scrolling
   }
 }
 
-.green{
+.green {
   color: black;
 }
 
-.yellow{
+.yellow {
   color: black;
 }
-.red{
+.red {
   color: black;
 }
-.rightturn{
+.rightturn {
   color: black;
   font-weight: bold;
 }
 
-.street-bg{
+.street-bg {
   position: relative;
   width: 400px;
   height: 400px;
   background-size: cover;
   // background-image: url();
 }
-// --- Cards Section----------------------------
-.cards {
-  margin-top:40px;
-}
-.cardsTitle {
-  color:white;
-font-size: 30px;
-text-align: center;
-}
-
-.cardsContainer p {
-font-size: 38px;
-text-align: center;
-color:white;
-}
-
-
-
-// --- footer ----------------------
 
 // footer-----------------------------------
 footer {
   background-color: rgba(78, 70, 63, 0.19);
   color: white;
-  margin-top: 120px;
   padding-bottom: 60px;
-  @include mq(s) { 
+  @include mq(s) {
     margin-top: 20px;
   }
-  @include mq(m) { 
+  @include mq(m) {
   }
 }
 .footerContainer {
@@ -254,10 +236,10 @@ footer {
   display: flex;
   justify-content: center;
   padding-top: 30px;
-  @include mq(s) { 
+  @include mq(s) {
     padding-bottom: 6vw;
   }
-  @include mq(m) { 
+  @include mq(m) {
     padding-bottom: 50px;
   }
   &__link {
@@ -286,7 +268,6 @@ footer {
   }
 }
 
-
 // ---------------------------
 
 /* ローディング画面 */
@@ -294,7 +275,7 @@ footer {
   width: 100vw;
   height: 100vh;
   transition: all 3s;
-  background-color:white;
+  background-color: white;
   position: fixed;
   top: 0;
   left: 0;
@@ -309,8 +290,8 @@ footer {
 
 canvas {
   background: #fff;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 }
 
 .loadingText {
@@ -320,7 +301,5 @@ canvas {
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 600;
-  color:rgb(119, 119, 119);
+  color: rgb(119, 119, 119);
 }
-
-
