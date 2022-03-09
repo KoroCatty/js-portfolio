@@ -160,8 +160,8 @@
   margin: 8px;
   border-radius: 50%;
   border: none;
-  height: auto;
-  width: 42px;
+  // height: auto;
+  // width: 42px;
   outline: none;
   background: rgba(153, 153, 153, 0.65);
   color: white;
@@ -169,6 +169,10 @@
   transition: 0.2s ease-in-out;
   &:hover {
     background: #ffffff6b;
+  }
+  img {
+    width:34px;
+    height: 34px;
   }
 }
 
