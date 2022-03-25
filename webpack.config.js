@@ -7,11 +7,11 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-  mode: 'development',// load時間がproductionより速い
+  mode: 'development',
   // mode: 'production',
   // devtool: 'cheap-module-eval-source-map',//buildエラー
   performance: {
-    hints: false,  //img sizeのエラーを消す
+    hints: false,  
     // maxEntrypointSize: 512000,
     // maxAssetSize: 512000
   },
@@ -19,28 +19,27 @@ module.exports = {
     main: './src/javascripts/main.js',
   },
   stats: {
-    children: true,//waringsの内容を表示
+    //waringsの内容を表示
+    children: true,
     // warnings: false,
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    // filename: 'javascripts/main.js',
     filename: 'javascripts/[name]-[contenthash].js',
-    // publicPath: '/webpack', //For gh-pages deployment
-    publicPath: '/',  // For Netlify deployment　出力されるCSSなどからの画像のパスを指定
+    publicPath: '/', 
   },
 
   optimization: {
     splitChunks: {
       chunks: 'initial',//importしているものを分割の対象とする
       cacheGroups: {
-        vendor: {//ライブラリの中のパッケージを分割することを宣言している?重複している3rdパーティのライブラリ（jQueryやvelocityなど）をまとめたファイルvendor fileを作り、各jsファイルはそれを読み込む。
-          test: /node_modules/,//分割の対象を指定。(jqueryなどはここにある)
+        vendor: {
+          test: /node_modules/,
           name: 'vendor',
         },
-        //greet.jsなどｊｓ共有ファイルをvendorとは別に作成する
         vendorsModules: {
-          test: /src[\\/]javascripts[\\/]*.js/,//optimizeされるファイル
+          //optimizeされるファイル
+          test: /src[\\/]javascripts[\\/]*.js/,
           name: 'vendor-modules',
           minSize: 0,//どのファイルサイズも対象にする
           minChunks: 2,//
@@ -49,10 +48,12 @@ module.exports = {
     },
     minimizer: [
       new TerserPlugin({
-        extractComments: false,//Licenseのコメントファイルを作らないようにできる
+        //Licenseのコメントファイルを作らない
+        extractComments: false,
         terserOptions: {
           compress: {
-            drop_console: true, //console.logなどを省く(本番環境であるproduction時のみ)
+            //console.logなどを省く(本番環境であるproduction時のみ
+            drop_console: true, 
           },
         },
       }),
@@ -80,14 +81,14 @@ module.exports = {
 
       {
         test: /\.(js|jsx)/,
-        exclude: /node_modules/,//除外しないとビルド時間が長くなる
-        use: [//ローダーを複数指定したい場合は、use内に利用したいローダーを記述します。
+        exclude: /node_modules/,
+        use: [
           {
             loader: 'babel-loader',
             options: {
               presets: [
                 ['@babel/preset-env', { targets: '> 0.25%, not dead' }],
-                '@babel/preset-react'//for react
+                '@babel/preset-react'
               ],
             },
           },
@@ -98,10 +99,7 @@ module.exports = {
         test: /\.(css|sass|scss)/,
         use: [
           MiniCssExtractPlugin.loader,
-          // CSSを文字列に変換してJSで扱えるようにする
           'css-loader',
-
-          // jsでｃｓｓを変換するプラグインを作るためのツール
           {
             loader: 'postcss-loader',
             options: {
@@ -115,7 +113,6 @@ module.exports = {
               },
             },
           },
-          // JSでsassに変換された文字列をCSSに変換
           'sass-loader',
         ],
       },
@@ -144,16 +141,14 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      // filename: './stylesheets/main.css',
       filename: './stylesheets/[name]-[contenthash].css',
     }),
     new HtmlWebpackPlugin({
       template: './src/templates/index.html',
       filename: 'index.html',
-      chunks: ['main'],//entry point名を指定する(このjsファイルを読み込む)
+      chunks: ['main'],
     }),
     
-    //Eslintを実行()内にoptionを渡せる。デフォルトではjs。
     new ESLintPlugin(),
 
     // new CleanWebpackPlugin(),

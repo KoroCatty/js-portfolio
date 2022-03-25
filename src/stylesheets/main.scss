@@ -2,10 +2,8 @@
 @import "_setting.scss";
 @import "_line.scss";
 @import "_weatherApi.scss";
-// <!-- <img src="<%= require('../images/top.jpg') %>" alt="" class="topImg"> -->
 
 body {
-  // width:100vw;
   font-family: "Noto Sans CJK JP", RoG2サンセリフStd;
   object-fit: cover; //高さを固定したまま可変
   background-image: linear-gradient(125deg, rgb(41, 41, 41), #f3f3f3);
@@ -82,16 +80,12 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  // font-size: 0.5vw;
   font-size: 1.5vw;
-  // line-height: 0.5vw;
   line-height: 1.8vw;
 
   color: black;
   text-shadow: 2px 2px 5px rgb(107, 107, 107);
   background-color: rgba(39, 39, 39, 0.9);
-  // background-image:linear-gradient(140deg,
   //  rgba(27, 27, 27, 0.9),
   //   rgba(7, 7, 7, 0.4));
   border-radius: 16px;

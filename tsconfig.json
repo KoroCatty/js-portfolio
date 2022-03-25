@@ -5,6 +5,7 @@
     "target": "es5",
     // "jsx": "react",
     "noImplicitAny": false,//何も型の定義がない際にanyとして扱う
-    "jsx": "react-jsx"//tsxを使えるようにする
+    "jsx": "react-jsx",//tsxを使えるようにする
+    "sourceMap": true
   }
 }
